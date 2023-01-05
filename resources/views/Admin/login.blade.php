@@ -45,7 +45,7 @@
                    required placeholder="Email">
             <input type="password" name="password" maxlength="50" id="password" placeholder="Password" required
                    class="required @error('password') is-invalid @enderror">
-            <button class="login-btn submitBtn" data-url="/admin">Login</button>
+                   <button class="login-btn submitBtn" data-url="/admin">Login</button>
         </form>
     </div>
 

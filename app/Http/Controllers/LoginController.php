@@ -47,7 +47,9 @@ class LoginController extends Controller
       'password' => 'required',
     ]);
 
-    if (auth()->guard('customers')->attempt(['email' => $request->username, 'password' => $request->password])) {
+    $remember_me = $request->remember?true:false;
+
+    if (auth()->guard('customers')->attempt(['email' => $request->username, 'password' => $request->password],$remember_me)) {
       if (Auth::guard('customers')->user()->type == 'User') {
         if (Auth::guard('customers')->user()->status == 'Active') {
           return redirect('products');
@@ -67,5 +69,9 @@ class LoginController extends Controller
     return redirect('/');
 }
 
+public function adminLogout(){
+  Auth::guard('web')->logout();
+  return redirect('/admin');
+}
 
 }

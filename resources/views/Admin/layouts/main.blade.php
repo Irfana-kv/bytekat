@@ -82,6 +82,12 @@
                                 <p>Product</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/logout')}}" class="nav-link">
+                                <i class="fas fa-th nav-icon"></i>
+                                <p>Logout</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

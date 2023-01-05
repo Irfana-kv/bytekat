@@ -57,4 +57,6 @@ Route::group(['middleware' => 'auth'], function () {
       Route::post('/edit/{id?}', [ProductController::class, 'productUpdate']);
       Route::post('/delete/{id?}', [ProductController::class, 'deleteProduct']);
    });
+   Route::get('admin/logout', [LoginController::class, 'adminLogout']);
+
 });
